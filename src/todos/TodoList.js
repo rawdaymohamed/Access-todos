@@ -5,7 +5,7 @@ import './TodoList.css';
 import { removeTodo } from '../actions';
 import { markTodoAsCompleted } from '../actions';
 import TodoListItem from './TodoListItem';
-
+import { displayAlert } from './thunks';
 const TodoList = ({
   todos = [],
   onRemovePressed,
@@ -29,5 +29,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onRemovePressed: (text) => dispatch(removeTodo(text)),
   onMarkAsCompletedPressed: (text) => dispatch(markTodoAsCompleted(text)),
+  // onDisplayAlertClicked: (text) => dispatch(displayAlert(text)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
