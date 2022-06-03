@@ -2,17 +2,19 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import NewTodoForm from './NewTodoForm';
 import './TodoList.css';
-import { removeTodo } from '../actions';
-import { markTodoAsCompleted } from '../actions';
 import TodoListItem from './TodoListItem';
 
-import { loadTodos } from './thunks';
+import {
+  loadTodos,
+  deleteTodoRequest,
+  markTodoAsCompletedRequest,
+} from './thunks';
 const TodoList = ({
   todos = [],
-  onRemovePressed,
   onMarkAsCompletedPressed,
   isLoading,
   startLoadingTodos,
+  onDeleteTodo,
 }) => {
   useEffect(() => {
     startLoadingTodos();
@@ -26,7 +28,7 @@ const TodoList = ({
         <TodoListItem
           key={i}
           todo={todo}
-          onRemovePressed={onRemovePressed}
+          onDeleteTodo={onDeleteTodo}
           onMarkAsCompletedPressed={onMarkAsCompletedPressed}
         />
       ))}
@@ -40,8 +42,9 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   startLoadingTodos: () => dispatch(loadTodos()),
-  onRemovePressed: (text) => dispatch(removeTodo(text)),
-  onMarkAsCompletedPressed: (text) => dispatch(markTodoAsCompleted(text)),
+  // onRemovePressed: (text) => dispatch(removeTodo(text)),
+  onMarkAsCompletedPressed: (id) => dispatch(markTodoAsCompletedRequest(id)),
+  onDeleteTodo: (id) => dispatch(deleteTodoRequest(id)),
   // onDisplayAlertClicked: (text) => dispatch(displayAlert(text)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

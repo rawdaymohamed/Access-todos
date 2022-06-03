@@ -23,11 +23,11 @@ export const todos = (state = [], action) => {
     case CREATE_TODO:
       return state.concat(payload.todo);
     case REMOVE_TODO:
-      return state.filter((todo) => todo !== payload.text);
+      return state.filter((todo) => todo.id !== payload.todo.id);
 
     case MARK_TODO_AS_COMPLETED:
       return state.map((todo) => {
-        if (todo.text === payload.text) {
+        if (todo.id === payload.todo.id) {
           return { ...todo, isCompleted: true };
         }
         return todo;
