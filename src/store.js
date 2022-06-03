@@ -3,9 +3,9 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2';
 import thunk from 'redux-thunk';
-import { todos, isLoading } from './reducers';
+import { todos } from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
-const reducers = { todos, isLoading };
+const reducers = { todos };
 const persistReducerConfig = {
   key: 'root',
   storage,
