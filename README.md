@@ -1,3 +1,8 @@
+# Access Todos
+
+Access Todo allows users to manage their todo list items, add, update, and delete them. It's built using React and Node.js. It uses React ecosystem components such as Redux, and thunk.
+![access-todo](./access-todo.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +73,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Access-todos
