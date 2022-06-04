@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { todos } from '../../reducers';
+
 describe('The todos reducer', () => {
   it('Adds a new todo when CREATE_TODO action is recieved', () => {
     const fakeTodo = { id: 1, text: 'Learn Redux', completed: false };

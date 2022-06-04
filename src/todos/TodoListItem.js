@@ -8,11 +8,14 @@ const TodoListItemStyle = styled.div`
   position: relative;
   box-shadow: 0 4px 8px grey;
 `;
+export const getBorderStyleForDate = (startDate, currentDate) =>
+  startDate > new Date(currentDate) - 8640000 * 5 ? 'none' : '1px solid red';
+
 const TodoListItemWithWarning = styled(TodoListItemStyle)`
-  border-bottom: ${(props) =>
-    new Date(props.createdAt) > new Date(Date.now()) - 8640000 * 5
-      ? 'none'
-      : '1px solid red'};
+  border-bottom: ${getBorderStyleForDate(
+    (props) => props.createdAt,
+    new Date()
+  )};
 `;
 const ButtonContainerStyle = styled.div`
   position: absolute;

@@ -26,11 +26,12 @@ export const addTodo = (text) => async (dispatch) => {
     dispatch(displayAlert(error));
   }
 };
-export const loadTodos = () => async (dispatch, getState) => {
+export const loadTodos = () => async (dispatch) => {
   try {
     dispatch(loadTodosInProgress());
     const todos = await fetch('http://localhost:8080/todos');
     const todosJson = await todos.json();
+
     dispatch(loadTodosSuccess(todosJson));
   } catch (error) {
     dispatch(loadTodosFailure(error));

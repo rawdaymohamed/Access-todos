@@ -16,10 +16,9 @@ export const markTodoAsCompleted = (todo) => ({
   type: MARK_TODO_AS_COMPLETED,
   payload: { todo },
 });
-export const LOAD_TODOS_PROGRESS = 'LOAD_TODOS_IN_PROGRESS';
+export const LOAD_TODOS_IN_PROGRESS = 'LOAD_TODOS_IN_PROGRESS';
 export const loadTodosInProgress = (todos) => ({
-  type: LOAD_TODOS_PROGRESS,
-  payload: { todos },
+  type: LOAD_TODOS_IN_PROGRESS,
 });
 
 export const LOAD_TODOS_SUCCESS = 'LOAD_TODOS_SUCCESS';
