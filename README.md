@@ -63,7 +63,7 @@ npm start
 ```
 cd react-ecosystem-server
 npm install
-npm run start
+npm run dev
 ```
 
 ## 🔧 Running the tests <a name = "tests"></a>
