@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 const TodoListItemStyle = styled.div`
   background: #fff;
   border-radius: 8px;
@@ -9,7 +9,7 @@ const TodoListItemStyle = styled.div`
   box-shadow: 0 4px 8px grey;
 `;
 export const getBorderStyleForDate = (startDate, currentDate) =>
-  startDate > new Date(currentDate) - 8640000 * 5 ? 'none' : '1px solid red';
+  startDate > new Date(currentDate) - 8640000 * 5 ? "none" : "1px solid red";
 
 const TodoListItemWithWarning = styled(TodoListItemStyle)`
   border-bottom: ${getBorderStyleForDate(
@@ -51,13 +51,13 @@ const TodoListItem = ({ todo, onDeleteTodo, onMarkAsCompletedPressed }) => {
       <ButtonContainerStyle>
         {todo.isCompleted ? null : (
           <CompletedButtonStyle
-            onClick={() => onMarkAsCompletedPressed(todo.id)}
+            onClick={() => onMarkAsCompletedPressed(todo._id)}
           >
             Mark as completed
           </CompletedButtonStyle>
         )}
 
-        <RemoveButtonStyle onClick={() => onDeleteTodo(todo.id)}>
+        <RemoveButtonStyle onClick={() => onDeleteTodo(todo._id)}>
           Remove
         </RemoveButtonStyle>
       </ButtonContainerStyle>

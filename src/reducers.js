@@ -5,7 +5,7 @@ import {
   LOAD_TODOS_IN_PROGRESS,
   LOAD_TODOS_SUCCESS,
   LOAD_TODOS_FAILURE,
-} from './actions';
+} from "./actions";
 const initialState = {
   data: [],
   isLoading: false,
@@ -21,14 +21,14 @@ export const todos = (state = initialState, action) => {
     case REMOVE_TODO:
       return {
         ...state,
-        data: state.data.filter((todo) => todo.id !== payload.todo.id),
+        data: state.data.filter((todo) => todo._id !== payload.todo._id),
       };
 
     case MARK_TODO_AS_COMPLETED:
       return {
         ...state,
         data: state.data.map((todo) => {
-          if (todo.id === payload.todo.id) {
+          if (todo._id === payload.todo._id) {
             return { ...todo, isCompleted: true };
           }
           return todo;

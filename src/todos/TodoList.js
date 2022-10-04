@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
-import NewTodoForm from './NewTodoForm';
-import TodoListItem from './TodoListItem';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import styled from "styled-components";
+import NewTodoForm from "./NewTodoForm";
+import TodoListItem from "./TodoListItem";
 import {
   getInCompletedTodos,
   getIsLoading,
   getCompletedTodos,
-} from './selectors';
+} from "./selectors";
 import {
   loadTodos,
   deleteTodoRequest,
   markTodoAsCompletedRequest,
-} from './thunks';
+} from "./thunks";
 const ListWrapper = styled.div`
   max-width: 700px;
   margin: auto;
